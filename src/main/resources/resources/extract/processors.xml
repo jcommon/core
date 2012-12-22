@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+	Provides default resource processors.
+-->
+
+<ResourceProcessors>
+	<Load class="jcommon.extract.processors.VarProcessor" />
+	<Load class="jcommon.extract.processors.EchoProcessor" />
+	<Load class="jcommon.extract.processors.FileProcessor" />
+	<Load class="jcommon.extract.processors.CleanProcessor" />
+	<Load class="jcommon.extract.processors.IfDefProcessor" />
+	<Load class="jcommon.extract.processors.DeleteProcessor" />
+	<Load class="jcommon.extract.processors.EnvVarProcessor" />
+	<Load class="jcommon.extract.processors.LibraryProcessor" />
+	<Load class="jcommon.extract.processors.SymLinkProcessor" />
+	<Load class="jcommon.extract.processors.IfNotDefProcessor" />
+	<Load class="jcommon.extract.processors.MakeDirectoryProcessor" />
+	<Load class="jcommon.extract.processors.SystemPropertyProcessor" />
+	<Load class="jcommon.extract.processors.WorkingDirectoryProcessor" />
+	<Load class="jcommon.extract.processors.AddJNASearchPathProcessor" />
+</ResourceProcessors>

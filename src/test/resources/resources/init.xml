@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Init>
+	<System>
+		<Load class="jcommon.init.TestSystemLoader" />
+	</System>
+	<Registry>
+		<Reference class="jcommon.init.TestRegistryReference" />
+	</Registry>
+</Init>
