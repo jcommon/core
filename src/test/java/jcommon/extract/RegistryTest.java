@@ -28,7 +28,7 @@ public class RegistryTest {
 
 	@Before
 	public void setUp() {
-		assertTrue("These unit tests require Windows to complete", Sys.isOSFamily(OSFamily.Windows));
+		//assertTrue("These unit tests require Windows to complete", Sys.isOSFamily(OSFamily.Windows));
 	}
 
 	@After
@@ -38,6 +38,9 @@ public class RegistryTest {
 
 	@Test
 	public void testRegistry() {
+    if (OSFamily.getSystemOSFamily() != OSFamily.Windows)
+      return;
+
 		assertTrue(Sys.isOSFamily(OSFamily.Windows));
 		assertTrue(Registry.clear());
 
