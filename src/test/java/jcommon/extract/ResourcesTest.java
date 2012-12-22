@@ -70,6 +70,9 @@ public class ResourcesTest {
 
 	@Test
 	public void testRead() {
+    if (OSFamily.getSystemOSFamily() != OSFamily.Windows)
+      return;
+
 		Resources r1 = Resources.newInstance(
         Sys.createPlatformPackageResourcePrefix("resources.extraction") + "test.xml"
     );
