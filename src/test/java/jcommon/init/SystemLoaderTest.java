@@ -1,5 +1,6 @@
 package jcommon.init;
 
+import jcommon.OSFamily;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -35,6 +36,9 @@ public class SystemLoaderTest {
 
 	@Test
 	public void testSystemLoader() {
+    if (OSFamily.getSystemOSFamily() != OSFamily.Windows)
+      return;
+
 		assertTrue(Sys.initializeSystem());
 	}
 }
