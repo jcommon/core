@@ -35,7 +35,7 @@ public class ResourcesTest {
 
 	@Before
 	public void setUp() {
-		assertTrue("These unit tests require Windows to complete", Sys.isOSFamily(OSFamily.Windows));
+		//assertTrue("These unit tests require Windows to complete", Sys.isOSFamily(OSFamily.Windows));
 	}
 
 	@After
@@ -111,6 +111,9 @@ public class ResourcesTest {
 
 	@Test
 	public void testExtract() throws InterruptedException, ExecutionException {
+    if (OSFamily.getSystemOSFamily() != OSFamily.Windows)
+      return;
+
 		assertNotNull(Sys.createPlatformName());
 
 		final IVariableProcessor varproc = VariableProcessorFactory.newInstance();
