@@ -19,13 +19,9 @@
 
 package jcommon;
 
-import com.sun.jna.Library;
-import com.sun.jna.Native;
 import java.io.File;
-import jcommon.extract.ResourceUtils;
 import jcommon.platform.IPath;
 import jcommon.platform.PlatformProviders;
-import jcommon.platform.win32.Win32Library;
 
 /**
  *
@@ -117,7 +113,7 @@ public class Path {
       if (path.isFile())
         return path.delete();
       else
-        return ResourceUtils.deleteDirectory(path);
+        return FileUtil.deleteDirectory(path); //ResourceUtils.deleteDirectory(path);
     } catch(SecurityException se) {
       return false;
     }
