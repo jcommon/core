@@ -3,21 +3,21 @@
 
   <name>jcommon</name>
 
-  <groupId>com.github.davidhoyt</groupId>
+  <groupId>org.jcommon</groupId>
   <artifactId>jcommon</artifactId>
-  <version>1.1-SNAPSHOT</version>
+  <version>1.0-SNAPSHOT</version>
 
   <packaging>jar</packaging>
   <inceptionYear>2012</inceptionYear>
-  <url>https://github.com/davidhoyt/jcommon/</url>
+  <url>https://github.com/jcommon/jcommon/</url>
   <description>
     Java library for simple common utilities.
   </description>
 
   <scm>
-    <url>git@github.com:davidhoyt/jcommon.git</url>
-    <connection>scm:git:git@github.com:davidhoyt/jcommon.git</connection>
-    <developerConnection>scm:git:ssh://git@github.com/davidhoyt/jcommon.git</developerConnection>
+    <url>git@github.com:jcommon/jcommon.git</url>
+    <connection>scm:git:git@github.com:jcommon/jcommon.git</connection>
+    <developerConnection>scm:git:ssh://git@github.com/jcommon/jcommon.git</developerConnection>
     <tag>HEAD</tag>
   </scm>
 
