@@ -1,4 +1,4 @@
 jcommon
 =======
 
-Java library for simple common utilities
+Java library for simple common utilities.
