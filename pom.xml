@@ -163,7 +163,7 @@
         </property>
       </activation>
       <properties>
-        <gpg.keyname>4E912FE5</gpg.keyname>	<!-- GPG Key ID to use for signing -->
+        <gpg.keyname>ABAF0C8B</gpg.keyname>	<!-- GPG Key ID to use for signing -->
       </properties>
       <build>
         <plugins>
