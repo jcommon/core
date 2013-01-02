@@ -1,6 +1,6 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="jcommon [all unit tests]" type="JUnit" factoryName="JUnit">
-    <module name="core" />
+  <configuration default="false" name="jcommon-core [all unit tests]" type="JUnit" factoryName="JUnit">
+    <module name="jcommon-core" />
     <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
     <option name="ALTERNATIVE_JRE_PATH" value="" />
     <option name="PACKAGE_NAME" />
@@ -17,7 +17,7 @@
     </option>
     <envs />
     <patterns>
-      <pattern testClass="jcommon.*" />
+      <pattern testClass="jcommon.core.*" />
     </patterns>
     <RunnerSettings RunnerId="Debug">
       <option name="DEBUG_PORT" value="" />
