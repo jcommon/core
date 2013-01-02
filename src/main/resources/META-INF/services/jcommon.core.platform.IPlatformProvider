@@ -1,0 +1,16 @@
+
+jcommon.core.platform.mac.Env #Mac
+jcommon.core.platform.unix.Env #Unix
+jcommon.core.platform.win32.Env #Windows
+
+jcommon.core.platform.mac.Process #Mac
+jcommon.core.platform.unix.Process #Unix
+jcommon.core.platform.win32.Process #Windows
+
+jcommon.core.platform.mac.Path #Mac
+jcommon.core.platform.unix.Path #Unix
+jcommon.core.platform.win32.Path #Windows
+
+jcommon.core.platform.mac.Terminal #Mac
+jcommon.core.platform.unix.Terminal #Unix
+jcommon.core.platform.win32.Terminal #Windows

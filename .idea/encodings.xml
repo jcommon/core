@@ -2,10 +2,6 @@
 <project version="4">
   <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false">
     <file url="file://$PROJECT_DIR$" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/../jcommon-init/src/test/java/jcommon/init/RegistryReferenceTest.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/../jcommon-init/src/test/java/jcommon/init/SystemLoaderTest.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/../jcommon-init/src/test/java/jcommon/init/TestRegistryReference.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/../jcommon-init/src/test/java/jcommon/init/TestSystemLoader.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/.gitignore" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/LICENSE.txt" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/mvn-release.sh" charset="UTF-8" />
