@@ -30,11 +30,13 @@
         <processorPath useClasspath="true" />
         <module name="core" />
         <module name="jcommon" />
+        <module name="jcommon-core" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="core" target="1.6" />
       <module name="jcommon" target="1.6" />
+      <module name="jcommon-core" target="1.6" />
     </bytecodeTargetLevel>
   </component>
 </project>
