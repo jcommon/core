@@ -5,7 +5,7 @@
 
   <groupId>org.jcommon</groupId>
   <artifactId>core</artifactId>
-  <version>1.1-SNAPSHOT</version>
+  <version>1.0-SNAPSHOT</version>
 
   <packaging>jar</packaging>
   <inceptionYear>2012</inceptionYear>
@@ -199,6 +199,25 @@
           </reportPlugins>
         </configuration>
       </plugin>
+
+
+      <!-- Upload site to github pages -->
+      <plugin>
+        <groupId>com.github.github</groupId>
+        <artifactId>site-maven-plugin</artifactId>
+        <version>0.7</version>
+        <configuration>
+          <message>Updated site for v${project.version}</message>
+        </configuration>
+        <executions>
+          <execution>
+            <goals>
+              <goal>site</goal>
+            </goals>
+            <phase>site-deploy</phase>
+          </execution>
+        </executions>
+      </plugin>
     </plugins>
   </build>
 
@@ -249,24 +268,6 @@
             </configuration>
           </plugin>
           -->
-
-          <!-- Upload site to github pages -->
-          <plugin>
-            <groupId>com.github.github</groupId>
-            <artifactId>site-maven-plugin</artifactId>
-            <version>0.7</version>
-            <configuration>
-              <message>Updated site for v${project.version}</message>
-            </configuration>
-            <executions>
-              <execution>
-                <goals>
-                  <goal>site</goal>
-                </goals>
-                <phase>deploy</phase>
-              </execution>
-            </executions>
-          </plugin>
         </plugins>
       </build>
     </profile>
