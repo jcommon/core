@@ -5,7 +5,7 @@
 
   <groupId>org.jcommon</groupId>
   <artifactId>core</artifactId>
-  <version>1.1-SNAPSHOT</version>
+  <version>1.0-SNAPSHOT</version>
 
   <packaging>jar</packaging>
   <inceptionYear>2012</inceptionYear>
@@ -263,7 +263,7 @@
                 <goals>
                   <goal>site</goal>
                 </goals>
-                <phase>site</phase>
+                <phase>deploy</phase>
               </execution>
             </executions>
           </plugin>
