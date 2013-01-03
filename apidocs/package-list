@@ -1,0 +1,5 @@
+jcommon.core
+jcommon.core.platform
+jcommon.core.platform.mac
+jcommon.core.platform.unix
+jcommon.core.platform.win32
