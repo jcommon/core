@@ -1,3 +1,5 @@
+<head><title>Test Source</title></head>
+
 Test Source
 -------------
 

@@ -1,3 +1,5 @@
+<head><title>JavaDocs</title></head>
+
 JavaDocs
 -------------
 
