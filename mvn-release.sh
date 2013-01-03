@@ -7,6 +7,6 @@ echo "Performing release..."
 mvn release:perform -Darguments=-Dgpg.passphrase=
 
 echo "Updating site..."
-mvn site -DdeployGitHubSite=true
+cd target/checkout/ && mvn site -DdeployGitHubSite=true && cd ../../
 
 echo "*** Release completed successfully ***"
