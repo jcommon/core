@@ -5,7 +5,7 @@
 
   <groupId>org.jcommon</groupId>
   <artifactId>core</artifactId>
-  <version>1.1-SNAPSHOT</version>
+  <version>1.0-SNAPSHOT</version>
 
   <packaging>jar</packaging>
   <inceptionYear>2012</inceptionYear>
@@ -20,6 +20,14 @@
     <developerConnection>scm:git:ssh://git@github.com/jcommon/core.git</developerConnection>
     <tag>HEAD</tag>
   </scm>
+
+  <distributionManagement>
+    <site>
+      <id>github</id>
+      <name>github</name>
+      <url>scm:git:ssh://git@github.com/jcommon/core.git</url>
+    </site>
+  </distributionManagement>
 
   <dependencies>
     <dependency>
@@ -199,7 +207,6 @@
           </reportPlugins>
         </configuration>
       </plugin>
-
 
       <!-- Upload site to github pages -->
       <plugin>
