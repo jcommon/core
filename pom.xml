@@ -5,7 +5,7 @@
 
   <groupId>org.jcommon</groupId>
   <artifactId>core</artifactId>
-  <version>1.1-SNAPSHOT</version>
+  <version>1.0-SNAPSHOT</version>
 
   <packaging>jar</packaging>
   <inceptionYear>2012</inceptionYear>
@@ -205,6 +205,9 @@
             <version>1.3</version>
           </dependency>
         </dependencies>
+        <goals>
+          <goal>site</goal>
+        </goals>
         <configuration>
           <inputEncoding>UTF-8</inputEncoding>
           <outputEncoding>UTF-8</outputEncoding>
@@ -334,7 +337,22 @@
             </configuration>
           </plugin>
           -->
+        </plugins>
+      </build>
+    </profile>
 
+    <!-- Configuration for uploading a new release's site. Run as "mvn site -DdeployGitHubSite=true" -->
+    <!-- Note that we do *not* use mvn site:deploy -->
+    <profile>
+      <id>deploy-github-site</id>
+      <activation>
+        <property>
+          <name>deployGitHubSite</name>
+          <value>true</value>
+        </property>
+      </activation>
+      <build>
+        <plugins>
           <!-- Upload site to github pages -->
           <plugin>
             <groupId>com.github.github</groupId>
@@ -348,7 +366,7 @@
                 <goals>
                   <goal>site</goal>
                 </goals>
-                <phase>deploy</phase>
+                <phase>site</phase>
               </execution>
             </executions>
           </plugin>
