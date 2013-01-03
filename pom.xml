@@ -380,6 +380,7 @@
     <jvm.class.format.target>1.6</jvm.class.format.target>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>${project.build.sourceEncoding}</project.reporting.outputEncoding>
+
     <github.global.server>github</github.global.server>
     <site.artifact.prefix>jcommon</site.artifact.prefix>
 
