@@ -3,18 +3,13 @@
 <project xmlns="http://maven.apache.org/DECORATION/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/DECORATION/1.0.0 http://maven.apache.org/xsd/decoration-1.0.0.xsd">
 
   <bannerLeft>
-    <name>JCommon</name>
-    <src>./img/product-200x57.png</src>
-    <href>https://github.com/jcommon/</href>
+    <name>JCommon Core Home</name>
+    <alt>JCommon Core Home</alt>
+    <src>./img/banner.png</src>
+    <href>./index.html</href>
   </bannerLeft>
 
   <publishDate position="none" />
-
-  <!--
-  <poweredBy>
-    <logo name="Maven" href="http://maven.apache.org/" img="http://maven.apache.org/images/logos/maven-feather.png"/>
-  </poweredBy>
-  -->
 
   <skin>
     <groupId>org.apache.maven.skins</groupId>
@@ -30,10 +25,10 @@
       <sideBarEnabled>true</sideBarEnabled>
       <sourceLineNumbersEnabled>false</sourceLineNumbersEnabled>
       <topBarIcon>
-        <name>Home</name>
-        <alt>Home</alt>
+        <name>JCommon GitHub Home</name>
+        <alt>JCommon GitHub Home</alt>
         <src>./img/product-54x16.png</src>
-        <href>/index.html</href>
+        <href>http://github.com/jcommon/</href> <!-- Deliberately omit https b/c maven site generator can't seem to handle it -->
       </topBarIcon>
       <gitHub>
         <projectId>jcommon/core</projectId>
@@ -46,12 +41,18 @@
   <body>
 
     <menu name="Project">
-      <item name="Home" href="index.html"/>
-      <item name="Source" href="http://github.com/jcommon/core/"/>
+      <item name="Home" href="index.html" />
+      <item name="GitHub Home" href="http://github.com/jcommon/core/" />
+      <item name="Downloads" href="downloads.html" />
     </menu>
 
     <menu name="Documentation">
       <item name="JavaDocs" href="docs.html" />
+      <item name="Source" href="source.html" />
+      <item name="Test Source" href="test-source.html" />
+      <item name="Checkstyle" href="checkstyle-aggregate.html" />
+      <item name="FindBugs Report" href="findbugs.html" />
+      <item name="Surefire Report" href="surefire.html" />
       <item name="Dependencies" href="dependencies.html" />
       <item name="Team" href="team-list.html" />
       <item name="License" href="license.html" />

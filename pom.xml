@@ -5,7 +5,7 @@
 
   <groupId>org.jcommon</groupId>
   <artifactId>core</artifactId>
-  <version>1.1-SNAPSHOT</version>
+  <version>1.0-SNAPSHOT</version>
 
   <packaging>jar</packaging>
   <inceptionYear>2012</inceptionYear>
@@ -20,14 +20,6 @@
     <developerConnection>scm:git:ssh://git@github.com/jcommon/core.git</developerConnection>
     <tag>HEAD</tag>
   </scm>
-
-  <distributionManagement>
-    <site>
-      <id>github</id>
-      <name>github</name>
-      <url>scm:git:ssh://git@github.com/jcommon/core.git</url>
-    </site>
-  </distributionManagement>
 
   <dependencies>
     <dependency>
@@ -84,6 +76,7 @@
         <artifactId>maven-source-plugin</artifactId>
         <version>2.2</version>
         <executions>
+          <!-- Install normal source jar -->
           <execution>
             <id>attach-sources</id>
             <goals>
@@ -138,6 +131,7 @@
           <nohelp>true</nohelp>
         </configuration>
         <executions>
+          <!-- Install normal javadoc jar -->
           <execution>
             <id>attach-javadocs</id>
             <goals>
@@ -189,6 +183,7 @@
                 <report>license</report>
               </reports>
             </plugin>
+
             <!-- Add javadocs to site -->
             <plugin>
               <groupId>org.apache.maven.plugins</groupId>
@@ -204,24 +199,86 @@
                 <report>javadoc</report>
               </reports>
             </plugin>
+
+            <!-- Add JXR (source xref) -->
+            <plugin>
+              <groupId>org.apache.maven.plugins</groupId>
+              <artifactId>maven-jxr-plugin</artifactId>
+              <version>2.3</version>
+              <configuration>
+                <linkJavadoc>true</linkJavadoc>
+              </configuration>
+            </plugin>
+
+            <!-- Add surefire report -->
+            <plugin>
+              <groupId>org.apache.maven.plugins</groupId>
+              <artifactId>maven-surefire-report-plugin</artifactId>
+              <version>2.13</version>
+              <configuration>
+                <outputName>surefire</outputName>
+              </configuration>
+            </plugin>
+
+            <!-- Add checkstyle report -->
+            <plugin>
+              <groupId>org.apache.maven.plugins</groupId>
+              <artifactId>maven-checkstyle-plugin</artifactId>
+              <version>2.9.1</version>
+              <configuration>
+                <enableRSS>false</enableRSS>
+              </configuration>
+            </plugin>
+
+            <!-- Add findbugs report -->
+            <plugin>
+              <groupId>org.codehaus.mojo</groupId>
+              <artifactId>findbugs-maven-plugin</artifactId>
+              <version>2.5.2</version>
+              <configuration>
+                <xmlOutput>true</xmlOutput>
+              </configuration>
+            </plugin>
           </reportPlugins>
         </configuration>
       </plugin>
 
-      <!-- Upload site to github pages -->
+      <!-- Copy the built artifacts during site generation -->
       <plugin>
-        <groupId>com.github.github</groupId>
-        <artifactId>site-maven-plugin</artifactId>
-        <version>0.7</version>
-        <configuration>
-          <message>Updated site for v${project.version}</message>
-        </configuration>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-dependency-plugin</artifactId>
         <executions>
           <execution>
+            <id>copy-to-site</id>
+            <phase>site</phase>
             <goals>
-              <goal>site</goal>
+              <goal>copy</goal>
             </goals>
-            <phase>site-deploy</phase>
+            <configuration>
+              <outputDirectory>${project.reporting.outputDirectory}/builds/v${project.version}</outputDirectory>
+              <artifactItems>
+                <artifactItem>
+                  <groupId>${project.groupId}</groupId>
+                  <artifactId>${project.artifactId}</artifactId>
+                  <version>${project.version}</version>
+                  <destFileName>${site.artifact.prefix}-${project.artifactId}-${project.version}.${project.packaging}</destFileName>
+                </artifactItem>
+                <artifactItem>
+                  <groupId>${project.groupId}</groupId>
+                  <artifactId>${project.artifactId}</artifactId>
+                  <version>${project.version}</version>
+                  <classifier>sources</classifier>
+                  <destFileName>${site.artifact.prefix}-${project.artifactId}-${project.version}-sources.${project.packaging}</destFileName>
+                </artifactItem>
+                <artifactItem>
+                  <groupId>${project.groupId}</groupId>
+                  <artifactId>${project.artifactId}</artifactId>
+                  <version>${project.version}</version>
+                  <classifier>javadoc</classifier>
+                  <destFileName>${site.artifact.prefix}-${project.artifactId}-${project.version}-javadoc.${project.packaging}</destFileName>
+                </artifactItem>
+              </artifactItems>
+            </configuration>
           </execution>
         </executions>
       </plugin>
@@ -275,6 +332,24 @@
             </configuration>
           </plugin>
           -->
+
+          <!-- Upload site to github pages -->
+          <plugin>
+            <groupId>com.github.github</groupId>
+            <artifactId>site-maven-plugin</artifactId>
+            <version>0.7</version>
+            <configuration>
+              <message>Updated site for v${project.version}</message>
+            </configuration>
+            <executions>
+              <execution>
+                <goals>
+                  <goal>site</goal>
+                </goals>
+                <phase>deploy</phase>
+              </execution>
+            </executions>
+          </plugin>
         </plugins>
       </build>
     </profile>
@@ -286,6 +361,10 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>${project.build.sourceEncoding}</project.reporting.outputEncoding>
     <github.global.server>github</github.global.server>
+    <site.artifact.prefix>jcommon</site.artifact.prefix>
+
+    <!-- Site generation (velocity) cannot interpret custom properties with a (.) in them -->
+    <vm_site_artifact_prefix>${site.artifact.prefix}</vm_site_artifact_prefix>
   </properties>
 
   <licenses>

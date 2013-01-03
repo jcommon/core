@@ -1,5 +1,5 @@
 JCommon Core
-===================
+-------------
 
 This forms the core for other JCommon libraries and provides access to common JVM and environment utilities.
 Please see the documentation for more information.
